@@ -493,7 +493,7 @@ mpJP = {
     m79: 'Direct Hits クリティカル率 (%)',
 };
 mpEN = {
-    m0: 'MopiMopi Overlay',
+    m0: 'Sexy Ceri Overlay',
     m1: 'Please start the combat.',
     m7: 'History<i class="material-icons left" style="color: rgba(255,255,255,0.5)">history</i>',
     m3: 'Hide the R. Name<i class="material-icons left" style="color: rgba(255,255,255,0.5)">visibility_off</i>',
@@ -646,7 +646,7 @@ mpEN = {
     m116: 'Cells with high variability of values.<br><font class="rdColor">= </font>Damage, Healed etc',
     m117: 'Wide Cells 2',
     m118: 'MaxHit, MaxHeal',
-    m154: 'MopiMopi Overlay Skin',
+    m154: 'Cerily\'s Sexy Overlay Skin',
     m155: 'Korea [Moogle] Haeru<br>GitHub <font class="rdColor">= </font>HAERUHAERU',
     m160: 'ACT Core Library : Chamsucript (js/core.js)',
     m161: 'Korea [Moogle] Laiglinne<Br>Elemental [Alexander] Lulala Lula<br>GitHub <font class="rdColor">= </font>laiglinne-ff',
@@ -740,7 +740,7 @@ mpEN = {
     m79: 'The percentage of hits that were direct hits as well as critical hits.',
 };
 mpDE = {																									
-    m0: 'MopiMopi Overlay',																									
+    m0: 'Sexy Ceri Overlay',																									
     m1: 'Warte auf Kampf.',																									
     m7: 'Historie<i class="material-icons left" style="color: rgba(255,255,255,0.5)">history</i>',																									
     m3: 'Namen ausblenden<i class="material-icons left" style="color: rgba(255,255,255,0.5)">visibility_off</i>',																									
@@ -893,7 +893,7 @@ mpDE = {
     m116: 'Spalten mit erweiterter Breite und stark wechselnden Werten.<br><font class="rdColor">= </font>Schaden, Heilung, usw.',																									
     m117: 'Breite Spalten 2',																									
     m118: 'MaxHit, MaxHeal',																									
-    m154: 'MopiMopi Overlay Skin',																									
+    m154: 'Cerily\'s Sexy Overlay',																									
     m155: 'Korea [Moogle] Haeru<br>GitHub <font class="rdColor">= </font>HAERUHAERU',																									
     m160: 'ACT Core Bibliothek : Chamsucript (js/core.js)',																									
     m161: 'Korea [Moogle] Laiglinne<Br>Elemental [Alexander] Lulala Lula<br>GitHub <font class="rdColor">= </font>laiglinne-ff',																									
