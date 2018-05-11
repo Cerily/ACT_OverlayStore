@@ -532,7 +532,7 @@ mpEN = {
     m234: 'When the encounter is end, hides the data table after latency time automatically.',
     m235: 'Other Settings',
     m236: 'Change the properties of other settings.<br><font class="rdColor">= </font>Overlay, Data Table etc.',
-    m237: 'Overaly Resizing Arrow',
+    m237: 'Sexy Ceri Background',
     m238: '<font class="rdColor">OFF </font>Hide<font class="rdColor">　　ON </font>Show',
     m239: 'Data Table',
     m240: 'Menu Tooltips',
