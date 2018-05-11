@@ -6,9 +6,9 @@ var tableFlag=0;var viewSettingsFlag=!1;var customFlag=!0;
 var initACTElement=[1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1];
 var initHealerElement=[1,1,1,1,1,1,1,1,1,0,0,0,1,0,1,0,0,1];
 var OnlyUsers=0;var objTime;var mpLang=[];var dataAbbList=null;
-var palette={tank1:'7B9AA2',tank2:'69100E',tank3:'41171F',heal1:'BDBDBD',heal2:'32307B',heal3:'B1561C',shield:'0F9D58',overheal:'FF3F80',dps1:'B38915',dps2:'3752D8',dps3:'EE2E48',dps4:'674598',dps5:'32670B',dps6:'ADC551',dps7:'148AA9',dps8:'E45A0F',dps9:'AC2997',life1:'353535',life2:'353535',ava:'000000',chocobo:'757575',LB:'FFBB00',me:'FAAE6DD',other:'FFFFFF',YOU:'FF5722',header:'CFCFCF',background:'5C577A',headerText:'0200B4',accentColor:'47D1A5',topbarBackgroundColor:'A74494',bigTextColor:'FFEC3D',smallTextColor:'74F0FF',borderColor:'000000',lineColor:'000000'};
+var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'32307B',heal3:'B1561C',shield:'0F9D58',overheal:'FF3F80',dps1:'B38915',dps2:'3752D8',dps3:'EE2E48',dps4:'674598',dps5:'32670B',dps6:'ADC551',dps7:'148AA9',dps8:'E45A0F',dps9:'AC2997',life1:'353535',life2:'353535',ava:'000000',chocobo:'757575',LB:'FFBB00',me:'44FFF8',other:'FFFFFF',YOU:'FF5722',header:'CFCFCF',background:'5C577A',headerText:'0200B4',accentColor:'47D1A5',topbarBackgroundColor:'A74494',bigTextColor:'FFEC3D',smallTextColor:'74F0FF',borderColor:'000000',lineColor:'000000'};
 
-var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:1,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
+var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
 var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:40,narrowCell2:55,wideCell1:70,wideCell2:100,topbarHeight:34,btnFontSize:10,autoHideTime:1,}
 var alias={"The Forbidden Chakra":"Forb.Chakra","Spineshatter Dive":"Spine.Dive","Fell Cleave":"Fell.Clv","Midare Setsugekka":"Midare","Hissatsu: Guren":"Guren","Enchanted Redoublement":"E.Redoubl","Enchanted Riposte":"E.Riposte","Enchanted Zwerchhau":"E.Zwerch","Refulgent Arrow":"Ref.Arrow"}
 
@@ -295,8 +295,8 @@ for(var i=1;i<header.length;i++){var group="<li><div class='collapsible-header r
 html+=group}
 $('#'+flag+'RaidTable').html(html)}
 function addClassName(name){if(name=='c-dps2'||name=='c-hps2')
-return'nameCell'+' '+name;else if(name=='c-dps4'||name=='c-dps6'||name=='c-dps7'||name=='c-dps8'||name=='c-dps9'||name=='c-dps10'||name=='c-dps29'||name=='c-hps3')
-return'narrowCell2'+' '+name;else if(name=='c-dps12'||name=='c-dps25'||name=='c-dps26'||name=='c-dps31'||name=='c-dps32'||name=='c-dps33'||name=='c-dps34'||name=='c-dps41'||name=='c-dps42'||name=='c-hps5'||name=='c-hps6'||name=='c-hps7'||name=='c-hps8'||name=='c-hps15'||name=='c-hps16')
+return'nameCell'+' '+name;else if(name=='c-dps4'||name=='c-dps6'||name=='c-dps7'||name=='c-dps8'||name=='c-dps9'||name=='c-dps10'||name=='c-dps29'||name=='c-hps3'||name=='c-dps25'||name=='c-dps26')
+return'narrowCell2'+' '+name;else if(name=='c-dps12'||name=='c-dps31'||name=='c-dps32'||name=='c-dps33'||name=='c-dps34'||name=='c-dps41'||name=='c-dps42'||name=='c-hps5'||name=='c-hps6'||name=='c-hps7'||name=='c-hps8'||name=='c-hps15'||name=='c-hps16')
 return'wideCell1'+' '+name;else if(name=='c-dps24'||name=='c-dps39'||name=='c-hps13')
 return'wideCell2'+' '+name;else if(name=='c-dps1'||name=='c-hps1')
 return'iconCell'+' '+name;else return'narrowCell1'+' '+name}
