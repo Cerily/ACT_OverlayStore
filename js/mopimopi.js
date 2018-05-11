@@ -9,18 +9,22 @@ var OnlyUsers=0;var objTime;var mpLang=[];var dataAbbList=null;
 var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'32307B',heal3:'B1561C',shield:'0F9D58',overheal:'FF3F80',dps1:'B38915',dps2:'3752D8',dps3:'EE2E48',dps4:'674598',dps5:'32670B',dps6:'ADC551',dps7:'148AA9',dps8:'E45A0F',dps9:'AC2997',life1:'353535',life2:'353535',ava:'000000',chocobo:'757575',LB:'FFBB00',me:'44FFF8',other:'FFFFFF',YOU:'FF5722',header:'CFCFCF',background:'5C577A',headerText:'0200B4',accentColor:'47D1A5',topbarBackgroundColor:'A74494',bigTextColor:'FFEC3D',smallTextColor:'74F0FF',borderColor:'000000',lineColor:'000000'};
 
 var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
-var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:40,narrowCell2:55,wideCell1:70,wideCell2:100,topbarHeight:34,btnFontSize:10,autoHideTime:1,}
+
+var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:100,topbarHeight:34,btnFontSize:10,autoHideTime:2,}
+
 var alias={"The Forbidden Chakra":"Forb.Chakra","Spineshatter Dive":"Spine.Dive","Fell Cleave":"Fell.Clv","Midare Setsugekka":"Midare","Hissatsu: Guren":"Guren","Enchanted Redoublement":"E.Redoubl","Enchanted Riposte":"E.Riposte","Enchanted Zwerchhau":"E.Zwerch","Refulgent Arrow":"Ref.Arrow"}
 
 var height=parseFloat(localStorage.getItem('topbarHeight')/10);var accentColor='#'+localStorage.getItem('accentColor');for(var i in inputSettings){if(!localStorage.getItem(i))
 localStorage.setItem(i,inputSettings[i]);$("[name="+i+"]").val(localStorage.getItem(i))}
 for(var i in palette){if(!localStorage.getItem(i)){localStorage.setItem(i,palette[i]);$('body').find('[name="'+i+'"]').val(palette[i]);$('body').find('#'+i).css('background','#'+palette[i])}else{$('body').find('[name="'+i+'"]').val(localStorage.getItem(i));$('body').find('#'+i).css('background','#'+localStorage.getItem(i))}}
 for(var i in settings){if(!localStorage.getItem(i)){localStorage.setItem(i,settings[i]);if(settings[i]==0||settings[i]==1)
-initCheck(i);else if(isNaN(settings[i]))
+
+	initCheck(i);else if(isNaN(settings[i]))
 radioButtonCotrol(settings[i])}else{if(localStorage.getItem(i)==0||localStorage.getItem(i)==1)
 initCheck(i);else if(isNaN(localStorage.getItem(i)))
 radioButtonCotrol(localStorage.getItem(i))}}
 if(!localStorage.getItem('number')){inputNumber=2}else{if(localStorage.getItem('number')==1)inputNumber=2;else inputNumber=0}
+
 for(var i=1;i<initACTElement.length;i++){var name='c-dps'+i;if(!localStorage.getItem(name)){if(initACTElement[i]==1)
 localStorage.setItem(name,1);else localStorage.setItem(name,0)}
 custom[i]=localStorage.getItem(name);if(custom[i]==1){$('[name="'+name+'"]'+' input').prop('checked',!0);$('[name="'+name+'"]'+' div.iconText i.material-icons').text('star');$('[name="'+name+'"]'+' div.iconText i.material-icons').css('color',accentColor)}else{$('[name="'+name+'"]'+' input').prop('checked',!1);$('[name="'+name+'"]'+' div.iconText i.material-icons').text('star_border');$('[name="'+name+'"]'+' div.iconText i.material-icons').css('color','rgba(255,255,255,0.38)')}}
@@ -137,7 +141,7 @@ function autoHidden(flag)
 					}
 				}
 			}
-		,parseInt(localStorage.getItem('autoHideTime'))*30000)
+		,parseInt(localStorage.getItem('autoHideTime'))*60000)
 		
 		
 	}
@@ -168,12 +172,31 @@ function closeHistory(){$('#history input').prop('checked',!1);$('#history i').c
 adjustTopbarHeight()}
 
 
-function adjustTopbarHeight(){height=parseFloat(localStorage.getItem('topbarHeight')/10);$('.toolbtn').css('height',(height-0.2)+'rem');if(localStorage.getItem('border')==1)
-$('.toolbtn').css('height',(height-0.4)+'rem');$('nav, nav i, .navbar_text').css('height',height+'rem');$('nav, nav i, .navbar_text').css('line-height',height+'rem');$('nav ul.dropdown-content div, nav ul.dropdown-content div i').css('height',5+'rem');$('nav ul.dropdown-content div, nav ul.dropdown-content div i').css('line-height',5+'rem');$('#previewTopbar').css('height',height+'rem');if($('[name=main]').hasClass('hidden')==!0||tableFlag==1){$('.navbar-fixed').css('height',height+'rem')}else{if(lastCombat==null)
-$('.navbar-fixed').css('height',height+'rem')
-else $('.navbar-fixed').css('height',(height+1.5)+'rem')}
-$('.dropdown-content li>a>i').css('line-height','inherit');$('.dropdown-content li>a>i').css('height','inherit')}
-function adjustCellWidth(){$('body').find('.narrowCell1').css('width',parseFloat(localStorage.getItem('narrowCell1')/10)+'rem');$('body').find('.narrowCell2').css('width',parseFloat(localStorage.getItem('narrowCell2')/10)+'rem');$('body').find('.wideCell1').css('width',parseFloat(localStorage.getItem('wideCell1')/10)+'rem');$('body').find('.wideCell2').css('width',parseFloat(localStorage.getItem('wideCell2')/10)+'rem')}
+function adjustTopbarHeight()
+{
+	height=parseFloat(localStorage.getItem('topbarHeight')/10);
+	$('.toolbtn').css('height',(height-0.2)+'rem');
+	if(localStorage.getItem('border')==1)
+	$('.toolbtn').css('height',(height-0.4)+'rem');$('nav, nav i, .navbar_text').css('height',height+'rem');
+	$('nav, nav i, .navbar_text').css('line-height',height+'rem');
+	$('nav ul.dropdown-content div, nav ul.dropdown-content div i').css('height',5+'rem');
+	$('nav ul.dropdown-content div, nav ul.dropdown-content div i').css('line-height',5+'rem');
+	$('#previewTopbar').css('height',height+'rem');
+
+if($('[name=main]').hasClass('hidden')==!0||tableFlag==1)
+	{$('.navbar-fixed').css('height',height+'rem')}
+else{
+	if(lastCombat==null)$('.navbar-fixed').css('height',height+'rem')
+	else $('.navbar-fixed').css('height',(height+1.5)+'rem')
+	}
+	
+$('.dropdown-content li>a>i').css('line-height','inherit');
+$('.dropdown-content li>a>i').css('height','inherit')
+}
+
+
+function adjustCellWidth(){$('body').find('.narrowCell1').css('width',parseFloat(localStorage.getItem('narrowCell1')/10)+'rem');
+$('body').find('.narrowCell2').css('width',parseFloat(localStorage.getItem('narrowCell2')/10)+'rem');$('body').find('.wideCell1').css('width',parseFloat(localStorage.getItem('wideCell1')/10)+'rem');$('body').find('.wideCell2').css('width',parseFloat(localStorage.getItem('wideCell2')/10)+'rem')}
 function initViewPage(id){$('#mainTopBar').css('background','#303030');$('nav').addClass('z-depth-1');$('#zone').css('backgroundColor','#303030');preScrollVal=scrollValue;$(document).scrollTop(0);$('body').find('[name="'+id+'"]').removeClass('hidden')}
 function viewPage(obj){switch(obj.id){case 'settings':$(document).scrollTop(0);viewSettingsFlag=!0;$('nav').css('background','#303030');$('nav').removeClass('z-depth-0');$('nav').addClass('z-depth-1');$('.navbar-fixed').css('height',height+'rem');$('#mainTopBar').css('background','#303030');$('body').find('[name="notice"]').fadeOut(0);$('body').find('[name="main"]').addClass('hidden');$('body').find('[name="raid"]').addClass('hidden');$('body').find('[name="settingsPage"]').removeClass('hidden');arrowHidden(localStorage.getItem("arrow"));break;case 'dataOrder':initViewPage(obj.id);createOrderDiv('dps');createOrderDiv('hps');$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'backup':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'generalACT':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'healerACT':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'dataProgressing':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'dataTable':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'graphColor':$('#mainTopBar').css('background','#303030');$('nav').addClass('z-depth-1');$('#zone').css('backgroundColor','#303030');pre2ScrollVal=scrollValue;$(document).scrollTop(0);$('body').find('[name="graphColor"]').removeClass('hidden');$('body').find('[name="settingsPage"]').addClass('hidden');$('body').find('[name="graph"]').addClass('hidden');break;case 'font':$('#mainTopBar').css('background','#303030');$('nav').addClass('z-depth-1');$('#zone').css('backgroundColor','#303030');pre2ScrollVal=scrollValue;$(document).scrollTop(0);$('body').find('[name="font"]').removeClass('hidden');$('body').find('[name="settingsPage"]').addClass('hidden');$('body').find('[name="fontSettings"]').addClass('hidden');break;case 'dataAbb':$('#mainTopBar').css('background','#303030');$('nav').addClass('z-depth-1');$('#zone').css('backgroundColor','#303030');pre2ScrollVal=scrollValue;$(document).scrollTop(0);createAbbDataDiv();$('body').find('[name="dataAbb"]').removeClass('hidden');$('body').find('[name="settingsPage"]').addClass('hidden');$('body').find('[name="dataProgressing"]').addClass('hidden');break;case 'cellWidth':initViewPage(obj.id);previewValue();$('#previewH').find('td').css('background','rgba(0,0,0,1)');$('#previewH').find('td').css('color','rgba(255,255,255,0.7)');$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'design':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'developer':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'graph':initViewPage(obj.id);previewValue();$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'fontSettings':initViewPage(obj.id);$('body').find('[name="settingsPage"]').addClass('hidden');break;case 'backGraph':$('body').find('[name="graphColor"]').addClass('hidden');$('body').find('[name="graph"]').removeClass('hidden');$(document).scrollTop(parseInt(pre2ScrollVal));onSettingsUpdate('previewColor');break;case 'backfont':settingsFont();$('body').find('[name="font"]').addClass('hidden');$('body').find('[name="fontSettings"]').removeClass('hidden');$(document).scrollTop(parseInt(pre2ScrollVal));break;case 'backdataAbb':settingsFont();$('body').find('[name="dataAbb"]').addClass('hidden');$('body').find('[name="dataProgressing"]').removeClass('hidden');$(document).scrollTop(parseInt(pre2ScrollVal));dataAbbList=JSON.parse(localStorage.getItem("abbList"));break;case 'backSettings':$('#mainTopBar').css('background','#303030');$('nav').addClass('z-depth-1');$('#zone').css('background','transparent');$('body').find('[name="dataOrder"]').addClass('hidden');$('body').find('[name="backup"]').addClass('hidden');$('body').find('[name="dataTable"]').addClass('hidden');$('body').find('[name="dataProgressing"]').addClass('hidden');$('body').find('[name="developer"]').addClass('hidden');$('body').find('[name="cellWidth"]').addClass('hidden');$('body').find('[name="graph"]').addClass('hidden');$('body').find('[name="fontSettings"]').addClass('hidden');$('body').find('[name="design"]').addClass('hidden');$('body').find('[name="healerACT"]').addClass('hidden');$('body').find('[name="generalACT"]').addClass('hidden');$('body').find('[name="settingsPage"]').removeClass('hidden');$('.navbar-fixed').css('height',height+'rem');$(document).scrollTop(parseInt(preScrollVal));dataShare();break;case 'back':$('body').find('[name="main"]').removeClass('hidden');$('body').find('[name="raid"]').removeClass('hidden');if(lastCombat==null){$('body').find('[name="notice"]').fadeIn(500);arrowHidden(0)}else arrowHidden(localStorage.getItem("arrow"));$('body').find('[name="settingsPage"]').addClass('hidden');closeHistory();viewSettingsFlag=!1;update();$('nav').removeClass('z-depth-1');$('nav').addClass('z-depth-0');$('nav').css('background','transparent');$(document).scrollTop(0);autoHidden("ON");clearTimeout(objTime);onSettingsUpdate('topbarBackgroundColor');break}}
 
@@ -361,3 +384,4 @@ td.innerText=1;else{if(encounterArray[0].lastCombat.zone==encounterArray[1].last
 var barBg=document.createElement("div");barBg.className="barBg";newHistory.appendChild(table);newHistory.appendChild(barBg);if(localStorage.getItem('line')==1)
 newHistory.appendChild(line);if(oldHistory==null)
 wrap.appendChild(newHistory);else wrap.insertBefore(newHistory,oldHistory);newHistory.id='oldHistoryBody';$('#oldHistoryBody').on({mouseover:function(){$(this).find('.barBg').css('background',accentColor)},mouseleave:function(){var bgColor=localStorage.getItem("background");var c=oHexColor(bgColor);$(this).find('.barBg').css('background','rgba('+c.r+','+c.g+','+c.b+','+now_bo+')')},click:function(){var listName=$(this).find('table').attr("id");for(var i in encounterArray){if(listName==encounterArray[i].lastCombat.combatKey){lastCombat=encounterArray[i].lastCombat;lastCombatHPS=encounterArray[i].lastCombatHPS;$('#historyBody').find('#viewIcon.viewCell').html('');$(this).find('#viewIcon').html('<img class="pngIcon" src="./images/menu/eye.svg"/>');$('#dpsTableBody').html('');$('#hpsTableBody').html('');closeHistory();update()}}}})}
+r
