@@ -75,7 +75,9 @@ localStorage.setItem(flag+"Order",JSON.stringify(data));customFlag=!0}
 function autoHidden(flag){if(localStorage.getItem("autoHide")==0||OnlyUsers==0)
 return;else{if(flag=="OFF"){objTime=setTimeout(function(){if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){$('body').find('[name=raid]').addClass('hidden')}
 else{$('body').find('#graphTableBody, #graphTableHeader').addClass('hidden')}
-if($('body').find('[name=main]').hasClass("hidden")==!1&&localStorage.getItem("autoHide")==1){if(localStorage.getItem("toast")==1){if(localStorage.getItem('lang')=="kr")
+if($('body').find('[name=main]').hasClass("hidden")==!1&&localStorage.getItem("autoHide")==1)
+
+{if(localStorage.getItem("toast")==1){if(localStorage.getItem('lang')=="kr")
 var $toastContent=$('<div class="row col s12 white-text center">< 자동 숨기기 ><br>데이터 테이블을 다시 보고 싶다면 오버레이를 클릭하세요!</div>');else if(localStorage.getItem('lang')=="en")
 var $toastContent=$('<div class="row col s12 white-text center">< Auto-hide ><br>Switching to historical view!</div>');else var $toastContent=$('<div class="row col s12 white-text center">< Auto-hide ><br>Switching to historical view!</div>r');Materialize.toast($toastContent,3000)}}},parseInt(localStorage.getItem('autoHideTime'))*30000)}
 else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){$('body').find('[name=raid]').removeClass('hidden')}
@@ -83,7 +85,7 @@ else{$('body').find('#graphTableBody, #graphTableHeader').removeClass('hidden')}
 clearTimeout(objTime);if(lastCombat.title!='Encounter')
 autoHidden("OFF")}}}
 function arrowHidden(flag){if(flag==0){if($('[name=main]').hasClass("hidden")==!0)
-$('#zone').css('backgroundColor','#303030');else $('#zone').css('background','transparent')}else{if($('[name=main]').hasClass("hidden")==!0){$('#zone').css('background','transparent');$('#zone').css('backgroundColor','#303030')}else{$('#zone').css('background-image','url(./images/ParseBG4.png)');$('#zone').css('background-size','cover');$('#zone').css('background-position','top center');$('#zone').css('background-repeat','no-repeat');$('#zone').css('backgroundColor','transparent')}}}
+$('#zone').css('backgroundColor','#303030');else $('#zone').css('background','transparent')}else{if($('[name=main]').hasClass("hidden")==!0){$('#zone').css('background','transparent');$('#zone').css('backgroundColor','#303030')}else{$('#zone').css('background-image','url(./images/ParseBG1.png)');$('#zone').css('background-size','cover');$('#zone').css('background-position','top center');$('#zone').css('background-repeat','no-repeat');$('#zone').css('backgroundColor','transparent')}}}
 function calFontSize(val,btn){switch(val){case 8:if(btn=='plus')return 10;else return 8;case 10:if(btn=='plus')return 12;else return 8;case 12:if(btn=='plus')return 14;else return 10;case 14:if(btn=='plus')return 16;else return 12;case 16:if(btn=='plus')return 20;else return 14;case 20:if(btn=='plus')return 24;else return 16;case 24:if(btn=='plus')return 28;else return 20;case 28:if(btn=='plus')return 32;else return 24;case 32:if(btn=='plus')return 32;else return 28}}
 function setFontSize(val){switch(val){case 8:$('html').css('font-size','55%');break;case 10:$('html').css('font-size','62.5%');break;case 12:$('html').css('font-size','75%');break;case 14:$('html').css('font-size','87.5%');break;case 16:$('html').css('font-size','100%');break;case 20:$('html').css('font-size','125%');break;case 24:$('html').css('font-size','150%');break;case 28:$('html').css('font-size','175%');break;case 32:$('html').css('font-size','200%');break}}
 function jscolorUpdate(jscolor){var id=jscolor.styleElement.id;var newColor=jscolor.toHEXString().split('#')[1];localStorage.setItem(id,newColor)}

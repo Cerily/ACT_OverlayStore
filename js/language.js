@@ -494,7 +494,7 @@ mpJP = {
 };
 mpEN = {
     m0: 'Sexy Ceri Overlay',
-    m1: 'Please start the combat.',
+    m1: 'Please starting the punching.',
     m7: 'History<i class="material-icons left" style="color: rgba(255,255,255,0.5)">history</i>',
     m3: 'Hide the R. Name<i class="material-icons left" style="color: rgba(255,255,255,0.5)">visibility_off</i>',
     m2: 'View Healer ACT<i class="material-icons left" style="color: rgba(255,255,255,0.5)">local_hospital</i>',
