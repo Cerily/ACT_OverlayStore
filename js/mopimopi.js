@@ -3,7 +3,7 @@ var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFon
 var alias={"The Forbidden Chakra":"Forb.Chakra","Spineshatter Dive":"Spine.Dive","Midare Setsugekka":"Midare","Hissatsu: Guren":"Guren","Enchanted Redoublement":"E.Redoubl","Enchanted Riposte":"E.Riposte","Enchanted Zwerchhau":"E.Zwerch","Refulgent Arrow":"Ref.Arrow"}
 var height=parseFloat(localStorage.getItem('topbarHeight')/10);var accentColor='#'+localStorage.getItem('accentColor');for(var i in inputSettings){rif(!localStorage.getItem(i))
 localStorage.setItem(i,inputSettings[i]);$("[name="+i+"]").val(localStorage.getItem(i))}
-for(var i in palette){if(!localStorage.getItem(i)){localStorage.setItem(i,palette[i]);$('body').find('[name="'+i+'"]').val(palette[i]);$(r'body').find('#'+i).css('background','#'+palette[i])}else{$('body').find('[name="'+i+'"]').val(localStorage.getItem(i));$('body').find('#'+i).css('background','#'+localStorage.getItem(i))}}
+for(var i in palette){if(!localStorage.getItem(i)){localStorage.setItem(i,palette[i]);$('body').find('[name="'+i+'"]').val(palette[i]);$('body').find('#'+i).css('background','#'+palette[i])}else{$('body').find('[name="'+i+'"]').val(localStorage.getItem(i));$('body').find('#'+i).css('background','#'+localStorage.getItem(i))}}
 for(var i in settings){if(!localStorage.getItem(i)){localStorage.setItem(i,settings[i]);if(settings[i]==0||settings[i]==1)
 initCheck(i);else if(isNaN(settings[i]))
 radioButtonCotrol(settings[i])}else{if(localStorage.getItem(i)==0||localStorage.getItem(i)==1)
