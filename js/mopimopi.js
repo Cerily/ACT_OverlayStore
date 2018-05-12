@@ -8,7 +8,7 @@ var initHealerElement=[1,1,1,1,1,1,1,1,1,0,0,0,1,0,1,0,0,1];
 var OnlyUsers=0;var objTime;var mpLang=[];var dataAbbList=null;
 var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'32307B',heal3:'B1561C',shield:'0F9D58',overheal:'FF3F80',dps1:'B38915',dps2:'3752D8',dps3:'EE2E48',dps4:'674598',dps5:'32670B',dps6:'ADC551',dps7:'148AA9',dps8:'E45A0F',dps9:'AC2997',life1:'353535',life2:'353535',ava:'000000',chocobo:'757575',LB:'FFBB00',me:'44FFF8',other:'FFFFFF',YOU:'FF5722',header:'CFCFCF',background:'5C577A',headerText:'0200B4',accentColor:'47D1A5',topbarBackgroundColor:'A74494',bigTextColor:'FFEC3D',smallTextColor:'74F0FF',borderColor:'000000',lineColor:'000000'};
 
-var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
+var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:10,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
 
 var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:100,topbarHeight:34,btnFontSize:10,autoHideTime:2,}
 
