@@ -175,20 +175,21 @@ function autoHidden(flag)
 						else var $toastContent=$('<div class="row col s12 white-text center">< Auto-history ><br>Switching to historical view!</div>r');
 						Materialize.toast($toastContent,3000);
 						
-					if(lastCombat!=null)
-					{
-						if(lastCombat.title!="Encounter")
+						if(lastCombat!=null)
 						{
+							if(lastCombat.title!="Encounter")
+							{
 							
 							
-							if(tableFlag==2||tableFlag==0){$('#graphTableHeader,#graphTableBody').addClass('hidden')}
-							else $('[name=raid]').addClass('hidden');
+								if(tableFlag==2||tableFlag==0){$('#graphTableHeader,#graphTableBody').addClass('hidden')}
+								else $('[name=raid]').addClass('hidden');
 							
-							$('ul[name=main]').addClass('hidden');
-							$('body').find('[name="notice"]').fadeOut(0);
-							$('ul[name=history]').removeClass('hidden');
-							$('#historyTableHeader, #historyTableBody').removeClass('hidden')
-							$('.navbar-fixed').css('height',(height+1.5)+'rem')
+								$('ul[name=main]').addClass('hidden');
+								$('body').find('[name="notice"]').fadeOut(0);
+								$('ul[name=history]').removeClass('hidden');
+								$('#historyTableHeader, #historyTableBody').removeClass('hidden')
+								$('.navbar-fixed').css('height',(height+1.5)+'rem')
+								$localStorage.setItem('history',1);
 						}
 					}	
 						
