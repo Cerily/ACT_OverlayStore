@@ -431,7 +431,6 @@
                                 <tr>
                                     <td class="iconCell">Job</td>
                                     <td class="nameCell" name="rankingName"></td>
-									<td class="iconCell">XIV</td>
                                     <td class="narrowCell2">DPS</td>
                                     <td class="narrowCell1">D%</td>
                                     <td class="wideCell1">Damage</td>
@@ -602,7 +601,6 @@
                                 <tr>
                                     <td class="iconCell">Job</td>
                                     <td class="nameCell" name="rankingName"></td>
-									<td class="iconCell">XIV</td>									
                                     <td class="narrowCell2">DPS</td>
                                     <td class="narrowCell1">D%</td>
                                     <td class="wideCell1">Damage</td>
@@ -618,8 +616,7 @@
                                         <tr>
                                             <td class="iconCell"><img class="pngIcon" src="images/glow/smn.png"></td>
                                             <td class="nameCell" name="rankingName2"></td>
-											<td class="iconCell"><img src="https:\/\/img2.finalfantasyxiv.com\/f\/ed465bd98bc91c1d4c643bea388f1d73_57ae9ee5592123dd79c8912bf768cf99fc0_96x96.jpg?t=20181318">XIV</td>
-											<td id="c1" class="narrowCell2" value="1234.56"></td>
+                                            <td id="c1" class="narrowCell2" value="1234.56"></td>
                                             <td id="c2" class="narrowCell1" value="12.3"></td>
                                             <td id="c3" class="wideCell1" value="123456"></td>
                                             <td id="c4" class="wideCell2" value="1234"></td>
@@ -2076,7 +2073,6 @@
                             <tr>
                                 <td class="iconCell">Job</td>
                                 <td class="nameCell" name="rankingName"></td>
-								<td class="iconCell">XIV</td>
                                 <td class="narrowCell2">DPS</td>
                                 <td class="narrowCell1">D%</td>
                                 <td class="wideCell1">Damage</td>
@@ -2090,7 +2086,6 @@
                             <tr>
                                 <td class="iconCell"><img class="pngIcon" src="images/glow/smn.png"></td>
                                 <td class="nameCell" name="rankingName2"></td>
-								<td class="iconCell"><img class="pngIcon" src="
                                 <td class="narrowCell2" id="c21" value="1234.56"></td>
                                 <td class="narrowCell1" id="c22" value="12.3"></td>
                                 <td class="wideCell1" id="c23" value="123456789"></td>
