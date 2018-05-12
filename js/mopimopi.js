@@ -32,8 +32,63 @@ for(var i=1;i<initHealerElement.length;i++){var name='c-hps'+i;if(!localStorage.
 localStorage.setItem(name,1);else localStorage.setItem(name,0)}
 healerCustom[i]=localStorage.getItem(name);if(healerCustom[i]==1){$('[name="'+name+'"]'+' input').prop('checked',!0);$('[name="'+name+'"]'+' div.iconText i.material-icons').text('star');$('[name="'+name+'"]'+' div.iconText i.material-icons').css('color',accentColor)}else{$('[name="'+name+'"]'+' input').prop('checked',!1);$('[name="'+name+'"]'+' div.iconText i.material-icons').text('star_border');$('[name="'+name+'"]'+' div.iconText i.material-icons').css('color','rgba(255,255,255,0.38)')}}
 
+
+
+
 var now_go=parseFloat(localStorage.getItem('go')/100);var now_bo=parseFloat(localStorage.getItem('bo')/100);var now_to=parseFloat(localStorage.getItem('to')/100);var now_ho=parseFloat(localStorage.getItem('ho')/100);var now_lo=parseFloat(localStorage.getItem('lo')/100);$('#range_go>input').val(localStorage.getItem('go'));$('#r_go').text(parseInt(localStorage.getItem('go'))+'%');$('#range_bo>input').val(localStorage.getItem('bo'));$('#r_bo').text(parseInt(localStorage.getItem('bo'))+'%');$('#range_ho>input').val(localStorage.getItem('ho'));$('#r_ho').text(parseInt(localStorage.getItem('ho'))+'%');$('#range_to>input').val(localStorage.getItem('to'));$('#r_to').text(parseInt(localStorage.getItem('to'))+'%');$('#range_lo>input').val(localStorage.getItem('lo'));$('#r_lo').text(parseInt(localStorage.getItem('lo'))+'%');$('#range_go').on('input',function(){localStorage.setItem('go',parseInt($('#range_go .value').text()));now_go=parseFloat(localStorage.getItem('go')/100);$('#r_go').text(parseInt($('#range_go .value').text())+'%');onSettingsUpdate('go')});$('#range_bo').on('input',function(){localStorage.setItem('bo',parseInt($('#range_bo .value').text()));now_bo=parseFloat(localStorage.getItem('bo')/100);$('#r_bo').text(parseInt($('#range_bo .value').text())+'%');onSettingsUpdate('bo')});$('#range_to').on('input',function(){localStorage.setItem('to',parseInt($('#range_to .value').text()));now_to=parseFloat(localStorage.getItem('to')/100);$('#r_to').text(parseInt($('#range_to .value').text())+'%');onSettingsUpdate('to')});$('#range_ho').on('input',function(){localStorage.setItem('ho',parseInt($('#range_ho .value').text()));now_ho=parseFloat(localStorage.getItem('ho')/100);$('#r_ho').text(parseInt($('#range_ho .value').text())+'%');onSettingsUpdate('ho')});$('#range_lo').on('input',function(){localStorage.setItem('lo',parseInt($('#range_lo .value').text()));now_lo=parseFloat(localStorage.getItem('lo')/100);$('#r_lo').text(parseInt($('#range_lo .value').text())+'%');onSettingsUpdate('lo')});(function(){var isTouch=!1;var simulated_flag='handler_simulated';var touch_click_array={};const clickMoveThreshold=20;function mouseHandler(event){if(isTouch){if(!event.hasOwnProperty(simulated_flag)){var fixed=new jQuery.Event(event);fixed.preventDefault();fixed.stopPropagation()}}else{}}
 function mouseFromTouch(type,touch){var event=document.createEvent("MouseEvent");event.initMouseEvent(type,!0,!0,window,1,touch.screenX,touch.screenY,touch.clientX,touch.clientY,!1,!1,!1,!1,0,null);event[simulated_flag]=!0;touch.target.dispatchEvent(event)};
+
+
+var E_TIME = 20.5714285714;
+var global = {
+utcTime: null,
+eorzeaTime: null
+};
+window.setInterval(updateClock, Math.floor(1000 * 60 /  E_TIME));
+
+function updateClock() {
+    global.utcTime = new Date().getTime();
+    var eo_timestamp = Math.floor(global.utcTime * E_TIME);
+    global.eorzeaTime = new Date();
+    global.eorzeaTime.setTime(eo_timestamp);
+    showTime();
+}
+
+function showTime() {
+    var d = new Date();
+    d.setTime(global.eorzeaTime);
+    var eTime = document.getElementById('e-time');
+    var hours = d.getUTCHours();
+    var ampm = hours > 11 ? "PM" : "AM";
+    if(hours > 12)
+        hours -= 12;
+    hours = padLeft(hours);
+    var minutes = d.getUTCMinutes();
+    minutes = padLeft(minutes);
+    eTime.innerHTML = hours + ":" + minutes + " " + ampm;
+}
+
+function padLeft(val){
+    var str = "" + val;
+    var pad = "00";
+    return pad.substring(0, pad.length - str.length) + str;
+}
+
+//updateClock();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function touchHandler(event){var touches=event.changedTouches,first=touches[0],type=""
