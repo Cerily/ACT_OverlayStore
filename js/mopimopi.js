@@ -211,7 +211,7 @@ function autoHidden(flag)
 	
 									$('ul[name=history]').addClass('hidden');
 								$('#historyTableHeader, #historyTableBody').addClass('hidden');
-								$('.navbar-fixed').css('height',(height-1.5)+'rem');
+								$('.navbar-fixed').css('height',(height+1.5)+'rem');
 								$localStorage.setItem('history',0);
 	
 	$('body').find('[name=raid]').removeClass('hidden');
@@ -224,7 +224,7 @@ else{
 $('ul[name=main]').removeClass('hidden');								
 								$('ul[name=history]').addClass('hidden');
 								$('#historyTableHeader, #historyTableBody').addClass('hidden');
-								$('.navbar-fixed').css('height',(height-1.5)+'rem');
+								$('.navbar-fixed').css('height',(height+1.5)+'rem');
 								$localStorage.setItem('history',0);
 	
 	
