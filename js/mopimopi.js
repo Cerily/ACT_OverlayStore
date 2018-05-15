@@ -187,8 +187,8 @@ function autoHidden(flag)
 								$('ul[name=main]').addClass('hidden');
 								$('body').find('[name="notice"]').fadeOut(0);
 								$('ul[name=history]').removeClass('hidden');
-								$('#historyTableHeader, #historyTableBody').removeClass('hidden')
-								$('.navbar-fixed').css('height',(height+1.5)+'rem')
+								$('#historyTableHeader, #historyTableBody').removeClass('hidden');
+								$('.navbar-fixed').css('height',(height+1.5)+'rem');
 								$localStorage.setItem('history',1);
 						}
 					}	
@@ -202,8 +202,31 @@ function autoHidden(flag)
 		
 	}
 							
-else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){$('body').find('[name=raid]').removeClass('hidden')}
-else{$('body').find('#graphTableBody, #graphTableHeader').removeClass('hidden')}
+else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){
+	
+									$('ul[name=history]').addClass('hidden');
+								$('#historyTableHeader, #historyTableBody').addClass('hidden');
+								$('.navbar-fixed').css('height',(height-1.5)+'rem');
+								$localStorage.setItem('history',0);
+	
+	$('body').find('[name=raid]').removeClass('hidden');
+	
+	
+}
+else{
+	
+		
+									$('ul[name=history]').addClass('hidden');
+								$('#historyTableHeader, #historyTableBody').addClass('hidden');
+								$('.navbar-fixed').css('height',(height-1.5)+'rem');
+								$localStorage.setItem('history',0);
+	
+	
+	
+	$('body').find('#graphTableBody, #graphTableHeader').removeClass('hidden');
+
+
+}
 clearTimeout(objTime);if(lastCombat.title!='Encounter')
 autoHidden("OFF")}}}
 
