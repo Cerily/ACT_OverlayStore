@@ -202,7 +202,12 @@ function autoHidden(flag)
 		
 	}
 							
-else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){
+	else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){
+
+					
+								
+							
+								$('ul[name=main]').removeClass('hidden');
 	
 									$('ul[name=history]').addClass('hidden');
 								$('#historyTableHeader, #historyTableBody').addClass('hidden');
@@ -215,8 +220,9 @@ else{if(OnlyUsers>9&&localStorage.getItem('raidMode')==1){
 }
 else{
 	
-		
-									$('ul[name=history]').addClass('hidden');
+		if(tableFlag==2||tableFlag==0){$('#graphTableHeader,#graphTableBody').removeClass('hidden')}
+$('ul[name=main]').removeClass('hidden');								
+								$('ul[name=history]').addClass('hidden');
 								$('#historyTableHeader, #historyTableBody').addClass('hidden');
 								$('.navbar-fixed').css('height',(height-1.5)+'rem');
 								$localStorage.setItem('history',0);
