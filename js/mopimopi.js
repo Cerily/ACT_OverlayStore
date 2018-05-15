@@ -3,7 +3,7 @@ var healerCustom=new Array();var scrollValue=0;
 var preScrollVal=0;var pre2ScrollVal=0;
 var encounterArray=new Array();var encounterCount=1;var saveLogFlag=!1;
 var tableFlag=0;var viewSettingsFlag=!1;var customFlag=!0;
-var initACTElement=[1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1];
+var initACTElement=[1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,1,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
 var initHealerElement=[1,1,1,1,1,1,1,1,1,0,0,0,1,0,1,0,0,1];
 var OnlyUsers=0;var objTime;var mpLang=[];var dataAbbList=null;
 var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'32307B',heal3:'B1561C',shield:'0F9D58',overheal:'FF3F80',dps1:'B38915',dps2:'3752D8',dps3:'EE2E48',dps4:'674598',dps5:'32670B',dps6:'ADC551',dps7:'148AA9',dps8:'E45A0F',dps9:'AC2997',life1:'353535',life2:'353535',ava:'000000',chocobo:'757575',LB:'FFBB00',me:'44FFF8',other:'FFFFFF',YOU:'FF5722',header:'CFCFCF',background:'5C577A',headerText:'0200B4',accentColor:'47D1A5',topbarBackgroundColor:'A74494',bigTextColor:'FFEC3D',smallTextColor:'74F0FF',borderColor:'000000',lineColor:'000000'};
