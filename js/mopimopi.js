@@ -10,7 +10,7 @@ var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'
 
 var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
 
-var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:70,topbarHeight:34,btnFontSize:10,autoHideTime:12,}
+var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:100,wideCell3:140,topbarHeight:34,btnFontSize:10,autoHideTime:12,}
 
 var alias={"The Forbidden Chakra":"Forb.Chakra","Spineshatter Dive":"Spine.Dive","Fell Cleave":"Fell.Clv","Midare Setsugekka":"Midare","Hissatsu: Guren":"Guren","Enchanted Redoublement":"E.Redoubl","Enchanted Riposte":"E.Riposte","Enchanted Zwerchhau":"E.Zwerch","Refulgent Arrow":"Ref.Arrow"}
 
@@ -405,8 +405,11 @@ $('#'+flag+'RaidTable').html(html)}
 function addClassName(name){if(name=='c-dps2'||name=='c-hps2')
 return'nameCell'+' '+name;else if(name=='c-dps4'||name=='c-dps6'||name=='c-dps7'||name=='c-dps8'||name=='c-dps9'||name=='c-dps10'||name=='c-dps29'||name=='c-hps3'||name=='c-dps25'||name=='c-dps26')
 return'narrowCell2'+' '+name;else if(name=='c-dps12'||name=='c-dps31'||name=='c-dps32'||name=='c-dps33'||name=='c-dps34'||name=='c-dps41'||name=='c-dps42'||name=='c-hps5'||name=='c-hps6'||name=='c-hps7'||name=='c-hps8'||name=='c-hps15'||name=='c-hps16')
-return'wideCell1'+' '+name;else if(name=='c-dps39'||name=='c-hps13'||name=='c-dps24')
-return'wideCell2'+' '+name;else if(name=='c-dps1'||name=='c-hps1')
+return'wideCell1'+' '+name;else if(name=='c-dps39'||name=='c-hps13')
+return'wideCell2'+' '+name;
+else if(name=='c-dps24')
+	return'wideCell3'+' '+name;
+else if(name=='c-dps1'||name=='c-hps1')
 return'iconCell'+' '+name;else return'narrowCell1'+' '+name}
 function addComma(num){if(isNaN(num))
 return 0;else{if(localStorage.getItem('dot')==1){num=num.toString().replace(/[.]/g,',')}
