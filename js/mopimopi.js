@@ -10,7 +10,7 @@ var palette={tank1:'7B9AA2',tank2:'901714',tank3:'41171F',heal1:'BDBDBD',heal2:'
 
 var settings={lang:'en',nameType:'BType',hideName:0,pets:1,comma:1,number:0,HPS:1,ranking:1,dot:0,maxAbb:1,raidMode:1,meBold:0,otherBold:0,border:0,edge:1,youColor:1,petAction:1,line:0,gradation:0,animation:1,go:100,bo:75,to:100,ho:100,lo:100,autoHide:1,arrow:1,tooltip:1,toast:1,myID:1,align:1,}
 
-var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:100,wideCell3:200,topbarHeight:34,btnFontSize:10,autoHideTime:12,}
+var inputSettings={timeFont:'Montserrat',krFont:'Segoe UI',jpFont:'Meiryo',enFont:'Roboto',deFont:'Segoe UI',indexFont:'Roboto Condensed',narrowCell1:36,narrowCell2:46,wideCell1:70,wideCell2:100,wideCell3:120,topbarHeight:34,btnFontSize:10,autoHideTime:12,}
 
 var alias={"The Forbidden Chakra":"Forb.Chakra","Spineshatter Dive":"Spine.Dive","Fell Cleave":"Fell.Clv","Midare Setsugekka":"Midare","Hissatsu: Guren":"Guren","Enchanted Redoublement":"E.Redoubl","Enchanted Riposte":"E.Riposte","Enchanted Zwerchhau":"E.Zwerch","Refulgent Arrow":"Ref.Arrow"}
 
